@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+        <title>体验店地图_斯凯威</title>
+        <meta name="keywords" content="体验店地图">
+        <meta name="description" content="体验店地图">
+        <meta name="author" content="lixinjie">
+        <link rel="stylesheet" href="style/skyview-phone.css">
+    </head>
+    <body>
+        <header class="header">
+            <i id="back" class="iconfont icon-back"></i>
+            <h1>地图</h1>
+            <nav class="nav">
+                <div class="menu-wrap">                    
+                    <button id="menu" type="button">
+                        <i id="menuIcon" class="iconfont icon-menu"></i>
+                        <!-- <i id="closeIcon" class="iconfont icon-close"></i> -->
+                    </button>
+                </div>                
+                <ul id="navList">
+                    <!-- 对当前页面的链接添加 active 类名 -->
+                    <li><a href="#" title="首页">首页</a></li>
+                    <li><a href="#" title="新闻">新闻</a></li>
+                    <li><a href="#" title="传媒">传媒</a></li>
+                    <li><a href="#" title="体验店" class="active">体验店</a></li>
+                    <li><a href="#" title="无人机">无人机</a></li>
+                    <li><a href="#" title="联系我们">联系我们</a></li>
+                </ul>
+            </nav>    
+        </header>
+        <main id="storeMap" class="main store-map-main">
+            <figure>
+                <img src="images/address.jpg" alt="体验店地图">
+            </figure>
+        </main>
+        <footer class="footer store-map-footer">
+            <small>Copyrights &copy; 2015 All Rights Reserved by WorldLink & Company.</small>
+        </footer>
+        <script src="script/jquery-3.1.0.min.js"></script>
+        <script src="script/skyview-phone.js"></script>
+        <script>
+            window.onload = function() {
+                storeMapHeight();  // 页面加载（包括图片）完成后，执行指定函数
+            };
+            window.onresize = function() {
+                storeMapHeight();  // 当浏览器窗口尺寸改变时，执行指定函数
+            };
+            // 设置体验店地图的高度
+            function storeMapHeight() {
+                var browserHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                var footerHeight = $(".store-map-footer").outerHeight();
+                var headerHeight = $(".header").outerHeight();
+                var mapTop = browserHeight - footerHeight - headerHeight;
+                $("#storeMap").height(mapTop);
+                // 对于媒体视频，对尺寸进行处理
+                $("#videodiv").css({
+                    width: "100%",
+                    height: mapTop,
+                    position: "relative"
+                });
+                $("#videodiv embed, #videodiv iframe").css({
+                    position: "absolute",
+                    top: 0,
+                    bottom: 0,
+                    margin: "auto",
+                    display: "block",
+                    width: "100%",
+                    height: "auto"
+                });
+            }
+        </script>
+    </body>
+</html>

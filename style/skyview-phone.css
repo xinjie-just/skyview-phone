@@ -1,0 +1,1860 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+* width: 100%;
+* max-width: 544px;
+* color: #666;
+* font-size: 14px;
+* 未满屏内容宽度：width: 96%;
+* date: 2016-08-29, author: lixinjie.
+*/
+/* 让 IE 浏览器对不识别的 html5 元素将其当做块元素处理*/
+details, main, summary { display: block; }
+
+/* 设置所有浏览器中外边距不为零的元素的外边距为零 */
+body, h1, h2, h3, h4, h5, h6, p, hr, blockquote, pre, textarea, fieldset, figure, ul, ol, dl, dd, menu { margin: 0; }
+
+/* 设置所有浏览器中内填充不为零的元素的内填充为零 */
+input, textarea, button, select, option, fieldset, legend, ul, ol, menu, th, td { padding: 0; }
+
+/* 设置所有浏览器中边框不为零的元素的边框为零 */
+hr, progress, input, textarea, button, select, fieldset { border: 0; }
+
+/* 设置所有元素的盒模型，将内填充和边距算在宽或高之内 */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+/* 在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸 */
+html {
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+/* 为 body 元素设置字体尺寸和类型 */
+body {
+  width: 100%;
+  max-width: 544px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: .7rem;
+  color: #666;
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+}
+
+/* 在 IE 9 及低版本浏览器中为下列元素设置为 inline-block 的显示方式 */
+audio,
+canvas,
+progress,
+video { display: inline-block; }
+
+/* 在 iOS 4-7 中为无 controls属性的 audio 元素添加正确的显示方式 */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* 在 Chrome, Firefox 和 Opera 中设置垂直方向基线对齐方式  */
+progress { vertical-align: baseline; }
+
+/* 1. 在 IE 中添加正确的显示方式 */
+template, /* 1 */
+[hidden] { display: none; }
+
+/* ===链接=== */
+/**
+ * 1. 在 IE 10 中移除链接被激活后的灰色背景
+ * 2. 在 iOS 8+ 和 Safari 8+ 中删除链接下划线位置处的空白
+ */
+a {
+  color: #666;
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+  text-decoration: none;
+}
+
+/* 当链接处于焦点、被激活和鼠标悬停其上时清除轮廓 */
+a:focus,
+a:active,
+a:hover { outline-width: 0; }
+
+/* ===文本=== */
+/**
+ * 1. 在 Firefox 39 及之前的版本中移除 abbr 元素的下边框
+ * 2. 在 Chrome, Edge, IE, Opera 和 Safari 中为 abbr 元素添加下划线
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+}
+
+/* 在 Safari 6 中防止下列元素通过后面的规则重复的应用程序的字体为粗体 */
+b,
+strong { font-weight: inherit; }
+
+/* 在 Chrome, Edge 和 Safari 浏览器中为下列元素添加正确的字体粗细 */
+b,
+strong { font-weight: bolder; }
+
+/* 在 Android 4.3 及之前系统的设备中的浏览器为下列元素添加字体风格为斜体 */
+dfn { font-style: italic; }
+
+/* 在 Chrome, Firefox 和 Safari 浏览器中纠正在含有 section 和 article 语境下的 h1 元素的字体尺寸和外边距 */
+/* article h1,
+section h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+} */
+
+/* 在 IE 9 及之前的浏览器版本中为 mark 元素添加背景颜色和字体颜色 */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/* 为 small 元素设置字体尺寸为离其最近的含有 font-size 属性的祖先元素的值的 80% */
+small { font-size: 80%; }
+
+/* 防止 sub 和 sup 元素影响行高 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+/* ===嵌入式内容=== */
+/* 在 IE 10 及更早的浏览器中当图片处于链接内部时移除图片的边框 */
+img { border-style: none; }
+
+/* 在 IE 浏览器中当 svg 元素不是根元素时隐藏溢出 */
+svg:not(:root) { overflow: hidden; }
+
+/* ===分组内容=== */
+/* 1. 纠正字体尺寸的继承和缩放(momospace字体是linux系统下的默认字体)
+ * 2. 在所有浏览器中纠正奇数的以 em 作为单位的字体尺寸
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* 在 IE 8 浏览器下为 figure 元素添加适当的外边距 */
+/* figure { margin: 1em 40px; } */
+
+/**
+ * 1. 在 Firefox 浏览器下为 hr 元素添加正确的和模型尺寸计算方式
+ * 2. 在 Edge 和 IE 中 hr 元素溢出时不隐藏
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/* ===表单=== */
+/**
+ * 1. 改变字体属性为继承
+ * 2. 在 Firefox 和 Safari 中为下列元素移除外边距
+ */
+button,
+input,
+select,
+textarea {
+  font: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/* 通过之前的规则修复 optgroup 元素的字体粗细 */
+optgroup { font-weight: bold; }
+
+/* 溢出时不隐藏 */
+button,
+input { overflow: visible; }
+
+/* 移除文本大小写的继承 */
+button,
+select { text-transform: none; }
+
+/**
+ * 1. 在 Android 4 系统版本中阻止破坏本地的音频视频控件的错误
+ * 2. 在 iOS 和 Safari 中纠正不能点击的类型
+ */
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; /* 2 */ 
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ * 在 Firefox 中移除内部边框和内填充(firefox浏览器中button元素点击时会出现虚线边框)
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+input:focus,
+button:focus,
+textarea:focus { outline: none; }
+button {
+  background-color: transparent;  /* 去掉 button 的背景颜色 */
+}
+
+/* 由先前的规则恢复焦点样式设置 */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
+
+/* 设置 fieldset 元素的 border, margin 和 padding 属性的值 */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. 在 Edge 和 IE 中纠正文本包裹
+ * 2. 纠正在 IE 中从 fieldset 元素继承而来的颜色值
+ * 3. 在所有浏览器中当开发者清零了 fieldset 元素的属性时，移除 padding 属性的值，以便他们能找出其它错误
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/* 在 IE 浏览器中移除默认的垂直导航条 */
+textarea { overflow: auto; }
+
+/* 在 IE 10 及之前的浏览器中改变盒模型的默认规则，即将内填充和边框也算在宽高之内 */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* 纠正在 Chrome 浏览器中递增和递减按钮的光标样式 */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button { height: auto; }
+
+/**
+ * 1. 纠正 Chrome 和 Safari 浏览器奇怪的外观（看上去像文本框）
+ * 2. 纠正在 Safari 浏览器中的轮廓样式（设置轮廓的偏移）
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/* 在 OS X 的 Chrome 和 Safari 浏览器中删除内填充和移除按钮 */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 纠正在 Chrome, Edge 和 Safari 中文本占位符属性的样式 */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * 1. 纠正在 iOS 和 Safair 中可点击类型不能点击的样式
+ * 2. 更改字体属性，在 Safari 中以继承的方式。
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* ===表格=== */
+/**
+ * 设置表格的边框合并为单一的边框，
+ * border-collapse 属性会忽略 border-spacing(相邻单元格边框间的距离) 属性和 empty-cells(是否在空单元格周围绘制边框)
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th { text-align: left; }
+
+/* ===列表=== */
+/* 设置列表的标记类型为无 */
+ol,
+ul { list-style-type: none; }
+
+/* ===关于浮动=== */
+/* 快速浮动 */
+.fl { float: left; }
+.fr { float: right; }
+
+/* 为添加了 clearfix 类名的元素清除浮动 */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after { clear: both; }
+
+/* ===基础设置=== */
+figure,
+figure.logo {
+  overflow: hidden;
+}
+figure.logo > a { display: block; }
+figure > img,
+figure.logo > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.center-content {
+  width: 96%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*===矢量图标字体===*/
+@font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot?t=1472000492'); /* IE9*/
+  src: url('../iconfont/iconfont.eot?t=1472000492#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff?t=1472000492') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf?t=1472000492') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg?t=1472000492#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-back:before { content: "\e600"; }
+.icon-play:before { content: "\e603"; }
+.icon-close:before { content: "\e602"; }
+.icon-menu:before { content: "\e601"; }
+
+/*===首页===*/
+/* 头部 */
+.header {
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  border-bottom: .05rem solid #f3f3f3;
+  height: 2.55rem;
+}
+.header i { font-size: 1.2rem; }
+.icon-back {
+  display: block;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+.header h1 {
+  z-index: 3;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+}
+.nav {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.menu-wrap { height: 2.5rem; }
+#menu {
+  z-index: 4;
+  display: block;
+  float: right;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+#menu .icon-close {  display: none; }
+#navList {
+  display: none;
+  z-index: 4;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #fff;
+}
+#navList li {
+  width: 100%;
+  text-align: center;
+  margin-top: .5rem;
+}
+#navList li:first-of-type { margin-top: 0; }
+#navList li a {
+  display: inline-block;
+  font-size: .8rem;
+  padding: .4rem 1.3rem;
+  border-bottom: .05rem solid transparent;
+}
+#navList li a.active {
+  color: #0068b7;
+  border-bottom-color: #0068b7;
+}
+/* 中间主要内容 */
+.bigpic-container {
+  position: relative;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.bigpic-container .description {
+  position: absolute;
+  top: 50%;
+  height: 5rem;
+  margin-top: -2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+.bigpic-container .description h1 {
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  color: #fefefe;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.bigpic-container .description h2 {
+  font-size: 1rem;
+  letter-spacing: .5rem;
+  color: #fff;
+  font-weight: normal;
+}
+.home-description {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 5rem;
+  margin-top: -2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+.home-description h1 {
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  color: #fefefe;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.home-description h2 {
+  font-size: 1rem;
+  word-spacing: .5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+/*视频*/
+.home-main {
+  z-index: 1;
+}
+.home-main video {
+  z-index: 2;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* 新闻 */
+.home-news {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+.news-heading {
+  position: relative;
+  padding-bottom: .5rem;
+}
+.news-heading:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: #0068b7;
+}
+.news-heading .cn {
+  display: block;
+  position: relative;
+  font-size: .7rem;
+  color: #4e4e4e;
+}
+.news-heading .cn:after {
+  position: absolute;
+  bottom: .1rem;
+  left: 1.6rem;
+  content: "";
+  width: .15rem;
+  height: .15rem;
+  border-radius: 50%;
+  background-color: #0068b7;
+}
+.news-heading .en {
+  display: block;
+  margin-top: .25em;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #4e4e4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+.recommend-news {
+  position: relative;
+  margin-top: 1rem;
+}
+.news-img-container {
+  position: relative;
+  width: 130px;
+  height: 150px;
+}
+.news-img-container figure {
+  width: 100%;
+  height: 100%;
+}
+/* .news-img-container time {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .8rem;
+  width: 100%;
+  color: #fff;
+} */
+.news-img-container time {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .8rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  color: #fff;
+}
+.news-img-container time span.year {
+  display: block;
+  font-size: .9rem;
+}
+.news-img-container time span.month-day {
+  display: block;
+  font-size: 1.3rem;
+  margin-top: .3rem;
+}
+.recommend-news .recommend-news-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  padding-left: 145px;
+}
+.recommend-news-text h3 {
+  position: relative;
+  height: 1.6rem;
+  padding-top: .2rem;
+  padding-bottom: .4rem;
+  line-height: 1rem;
+  font-size: .8rem;
+  font-weight: normal;
+  color: #4e4e4e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recommend-news-text h3:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  height: 1px;
+  width: 1.5rem;
+  background-color: #4e4e4e;
+}
+.recommend-news-text p {
+  height: 3.6rem;
+  margin-top: .5rem;
+  line-height: 1.5;
+  color: #a8a8a8;
+  font-size: .6rem;
+  overflow: hidden;
+}
+.recommend-news-text a.look-through-details {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.3rem;
+  margin-top: .4rem;
+  text-align: center;
+  font-size: .9rem;
+  font-weight: bolder;
+  color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  border-radius: 50%;
+}
+.hot-news { margin-top: 1rem; }
+.hot-news li a {
+  position: relative;
+  display: block;
+  height: 3rem;
+  margin-bottom: .6rem;
+  padding: .6rem .3rem;
+  border: 1px solid #a8a8a8; 
+}
+.hot-news li a:after {
+  position: absolute;
+  left: 3.1rem;
+  top: .6rem;
+  content: "";
+  width: 1px;
+  height: 1.8rem;
+  background-color: #a8a8a8;
+}
+.hot-news li a time {
+  position: absolute;
+  top: .6rem;
+  left: 0;
+  width: 3.1rem;
+  line-height: .9rem;
+  text-align: center;
+}
+.hot-news li a time span.day {
+  display: block;
+  font-size: 1.2rem;
+  color: #4e4e4e;
+}
+.hot-news li a time span.month {
+  display: block;
+  font-size: .9rem;
+  color: #a8a8a8;
+}
+.hot-news li a h3 {
+  position: absolute;
+  top: .6rem;
+  left: 0;
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  padding-left: 3.9rem;
+  font-size: .7rem;
+  color: #4e4e4e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.home-news .look-through-more {
+  margin-top: .3rem;
+  font-size: .7rem;
+  color: #a8a8a8;
+  text-align: center;
+}
+.home-news .look-through-more a {
+  display: inline-block;
+  padding: .4rem 1rem;
+  font-size: .7rem;
+  color: #a8a8a8;
+}
+/* 传媒 */
+.home-media-bg {
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  background-color: #f7f7f7;
+}
+.home-media { position: relative; }
+.home-media p {
+  float: left;
+  width: 50%;
+  height: 7.5rem;
+  line-height: 1.5;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  padding: .6rem 1em .6rem;
+  font-size: .7rem;
+  color: #a8a8a8;
+  overflow: hidden;
+}
+.home-media figure {
+  float: left;
+  width: 50%;
+  height: 7.5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
+}
+.home-media .media-more {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 7.5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.home-media .media-more a {
+  display: inline-block;
+  position: relative;
+  margin: 3rem auto 0;
+  padding: .3rem .6rem;
+  text-align: center;
+  border: 1px solid #a8a8a8;
+  color: #4e4e4e;
+  border-radius: 5px;
+}
+.home-media .media-more a:after {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  content: "";
+  width: 2rem;
+  height: 1px;
+  margin-left: -1rem;
+  background-color: #a2a2a2;
+}
+.home-media .media-heading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 2;
+  width: 6.5rem;
+  height: 6.5rem;
+  background-color: #fff;
+  padding: .8rem;
+  text-align: center;
+  color: #4e4e4e;
+}
+.media-heading .en {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3em;
+}
+.media-heading .cn {
+  position: relative;
+  display: block;
+  font-size: .8rem;
+  line-height: 1.3em;
+  margin-top: 10px;
+}
+.media-heading .cn:after {
+  position: absolute;
+  left: 50%;
+  bottom: .2rem;
+  content: "";
+  width: .2rem;
+  height: .2rem;
+  margin-left: 2.2rem;
+  border-radius: 50%;
+  background-color: #0068b7;
+}
+/* 服务 */
+/* 服务类型列表，体验店页面将继承这里的样式 */
+.service-type-list { margin-top: 1rem; }
+.service-type-list li {
+  margin-top: .8rem;
+  border: 1px solid #a8a8a8;
+  padding: 3rem .8rem .8rem;
+  background-repeat: no-repeat;
+  background-position: 1.4rem .6rem;
+}
+.service-type-list li.product {
+  background-image: url("../images/product-icon.png");
+  background-position: 1rem .5rem;
+}
+.service-type-list li.train { background-image: url("../images/train-icon.png"); }
+.service-type-list li.technology { background-image: url("../images/technology-icon.png"); }
+.service-type-list li.repair { background-image: url("../images/repair-icon.png"); }
+.service-type-list li strong {
+  display: block;
+  font-size: .8rem;
+  font-weight: normal;
+  color: #444;
+}
+.service-type-list li p {
+  margin-top: 12px;
+  line-height: 1.5;
+  color: #666;
+  text-align: justify;
+  word-wrap: break-word;
+}
+/* 服务详情信息列表，产品服务，体验店页面将继承这里的样式 */
+.product-info-list {
+  position: relative;
+  min-height: 11rem;
+  margin-top: 2rem;
+}
+.product-info-list .product-info-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 11rem;
+  padding-right: 150px;
+}
+.product-info-text > div { color: #4e4e4e; }
+.product-info-text .retail-stroe {
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.product-info-text .tagline {
+  font-size: .8rem;
+  line-height: 1.3;
+}
+.product-info-text .s-v {
+  position: relative;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.product-info-text .s-v:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: #4e4e4e;
+}
+.product-info-text .address {
+  font-size: .6rem;
+  margin-top: .5rem;
+  line-height: 1.3;
+}
+.product-info-text .business-hours {
+  margin-top: .5rem;
+  font-size: .6rem;
+  line-height: 1.3;
+}
+.product-info-text .time-out {
+  margin-top: .5rem;
+  font-size: .6rem;
+  line-height: 1.3;
+}
+.product-info-text .look-through-more {
+  margin-top: .5rem;
+}
+.product-info-text .look-through-more a {
+  display: inline-block;
+  padding: .2rem 1.6rem .2rem .6rem;
+  color: #4e4e4e;
+  border: 1px solid #4e4e4e;
+  border-radius: .2rem;
+  background: url("../images/more-bottom.png") no-repeat 3.8rem center;
+}
+.product-info-list figure.product-info-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 220px;
+}
+.product-info-list li .map {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1140px;
+  height: 612px;
+  background-color: rgba(64, 64, 64, 0.5);
+}
+.map button.close-map-img {
+  display: block;
+  float: right;
+  width: 42px;
+  height: 42px;
+  background-color: rgba(0, 104, 183, 0.8);
+}
+.map button.close-map-img span {
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 3px;
+  margin-left: 3px;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.map button.close-map-img span:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.product-info-list li .map figure {
+  width: 1140px;
+  height: 570px;
+}
+/* 无人机 */
+.home-uav { padding-top: 2rem; }
+.customization-heading {
+  position: relative;
+  padding-bottom: .5rem;
+}
+.customization-heading:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: #0068b7;
+}
+.customization-heading .cn {
+  display: block;
+  position: relative;
+  font-size: .7rem;
+  color: #4e4e4e;
+}
+.customization-heading .cn:after {
+  position: absolute;
+  bottom: .1rem;
+  left: 5.1rem;
+  content: "";
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 50%;
+  background-color: #0068b7;
+}
+.customization-heading .en {
+  display: block;
+  font-size: 1rem;
+  margin-top: .25rem;
+  line-height: 1.2;
+  color: #4e4e4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+.customization-summary {
+  margin-top: .7rem;
+  color: #4e4e4e;
+  line-height: 1.5;
+}
+.customization-focus {
+  position: relative;
+  overflow: hidden;
+  margin-top: .6rem;
+}
+.customization-focus figure {
+  width: 100%;
+  height: auto;
+}
+.customization-focus > div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: .5rem .7rem;
+  background-color: rgba(0, 104, 183, .8);
+  color: #fff;
+  overflow: hidden;
+}
+.customization-focus > div .cn {
+  display: block;
+  line-height: 1.3;
+}
+.customization-focus > div .en {
+  display: block;
+  font-size: .6rem;
+  margin-top: .3rem;
+  line-height: 1.3em;
+}
+.customization-wisdom {
+  position: relative;
+  width: 100%;
+}
+.customization-wisdom .description-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.customization-wisdom hgroup {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2.8rem;
+  line-height: 1.4rem;
+  margin-top: -1.4rem;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.customization-wisdom hgroup h4 { font-size: .8rem; }
+.customization-wisdom hgroup h5 {
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+.customization-content {
+  position: relative;
+  min-height: 7.5rem;
+}
+.customization-content > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: .6rem 170px 0 .6rem;
+}
+.customization-content > div h4 {
+  font-size: .8rem;
+  line-height: 1.2;
+}
+.customization-content > div p {
+  font-size: .6rem;
+  color: #a8a8a8;
+  margin-top: .3rem;
+  line-height: 1.2;
+}
+.customization-content > div a {
+  display: inline-block;
+  color: #4e4e4e;
+  margin-top: .5rem;
+  padding: .2rem .5rem;
+  text-align: center;
+  border: 1px solid #4e4e4e;
+  border-radius: .2rem;
+}
+.customization-content > figure {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  overflow: hidden;
+}
+/* 关于我们 */
+.home-aboutus {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+}
+.aboutus-text-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(64, 64, 64, 0.6);
+}
+.aboutus-text {
+  position: relative;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #fff;
+  overflow: hidden;
+}
+.aboutus-heading {
+  position: relative;
+  padding-bottom: .5rem;
+}
+.aboutus-heading:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: #fff;
+}
+.aboutus-heading .cn {
+  display: block;
+  position: relative;
+  font-size: .7rem;
+}
+.aboutus-heading .cn:after {
+  position: absolute;
+  bottom: .1rem;
+  left: 3rem;
+  content: "";
+  width: .15rem;
+  height: .15rem;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.aboutus-heading .en {
+  display: block;
+  margin-top: .25em;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+.aboutus-text p.aboutus-summary {
+  margin-top: 1rem;
+  line-height: 1.3;
+}
+.aboutus-text h4 {
+  font-size: .8rem;
+  font-weight: normal;
+  margin-top: .6rem;
+}
+.aboutus-text p:not(.aboutus-summary) {
+  line-height: 1.3;
+  margin-top: .3rem;
+}
+.aboutus-text .look-through-more {
+  position: absolute;
+  bottom: 1rem;
+}
+.aboutus-text .look-through-more a {
+  display: inline-block;
+  padding: .2rem 1.6rem .2rem .6rem;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: .2rem;
+  background: url("../images/more-right.png") no-repeat 3.8rem center;
+}
+/* 合作伙伴 */
+.home-partner { margin-top: 2rem; }
+.partner-heading {
+  position: relative;
+  padding-bottom: .5rem;
+}
+.partner-heading:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: #0068b7;
+}
+.partner-heading .cn {
+  display: block;
+  position: relative;
+  font-size: .7rem;
+  color: #4e4e4e;
+}
+.partner-heading .cn:after {
+  position: absolute;
+  bottom: .1rem;
+  left: 3rem;
+  content: "";
+  width: .15rem;
+  height: .15rem;
+  border-radius: 50%;
+  background-color: #0068b7;
+}
+.partner-heading .en {
+  display: block;
+  margin-top: .25em;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #4e4e4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+/* 合作伙伴图片列表 */
+#partnerImgList { margin-top: 1rem; }
+#partnerImgList li {
+  float: left;
+  width: 33.33333333%;
+}
+#partnerImgList li a {
+  display: block;
+  position: relative;
+  float: left;
+  height: 100px;
+  width: 100%;
+  padding: .2rem;
+  border: 1px solid #ebebeb;
+}
+#partnerImgList li img {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+/* 底部 */
+.footer {
+  margin-top: 2rem;
+  width: 100%;
+  padding: .5rem;
+  text-align: center;
+  background-color: #282828;
+}
+.footer small {
+  display: inline-block;
+  font-family: "宋体";
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+  text-transform: initial;
+}
+
+/*===联系我们===*/
+/* 咨询 */
+.contact-main > div { margin-top: 1rem; }
+.contact-main > div.inquiry {
+  font-size: 1rem;
+  color: #0068b7;
+  line-height: 1.3;
+}
+.contact-main > div.inquiry span {
+  display: block;
+  font-size: .7rem;
+  line-height: 1.4;
+  margin-top: .2rem;
+  color: #666;
+}
+.contact-main h2 {
+  font-size: 1.5rem;
+  font-family: "宋体";
+  color: #303030;
+  line-height: 1.2;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+/* 电话 */
+.contact-main > div.tel a {
+  display: block;
+  font-size: .9rem;
+  color: #0068b7;
+  line-height: 1.3;
+  font-weight: bold;
+  font-style: italic;
+  font-family: arial, sans-serif;
+}
+.contact-main > div.tel span {
+  display: block;
+  line-height: 1.4;
+}
+/* 地址和邮箱 */
+/* 电话和微信 */
+.contact-main .common .common-heading {
+  color: #303030;
+  font-size: .8rem;
+  line-height: 1.3;
+}
+.contact-main .common .common-info {
+  display: block;
+  line-height: 1.4;
+  margin-top: .2rem;
+}
+.contact-main .common-info.wecat-info {
+  display: inline-block;
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: 0 0 .2rem #303030;
+  border: 1px solid #a0a0a0;
+  padding: .2rem;
+  margin-top: .6rem;
+  border-radius: .15rem;
+}
+.contact-main .wecat-info img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+/* 介绍文章部分 */
+.contact-main article { margin-top: 1.5rem; }
+.contact-main article h2 { margin-bottom: 1rem; } 
+.contact-main article section { margin-top: .7rem; }
+.contact-main article h3 {
+  font-size: .8rem;
+  color: #333;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.contact-main article p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  line-height: 1.8;
+  text-align: justify;
+  word-wrap: break-word;
+  letter-spacing: .1em;
+  text-indent: 2.2em; /* 多给 0.2em 能消除由 letter-spacing 引起的第一行不能留空两个汉字的情况 */
+}
+
+/*===新闻===*/
+.news-list { padding-top: 1rem; }
+.news-list li {
+  position: relative;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+.news-list li:after { border-bottom: none; }
+.news-img-container {
+  position: relative;
+  width: 130px;
+  height: 150px;
+}
+.news-img-container figure {
+  width: 100%;
+  height: 100%;
+}
+.news-img-container figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.news-img-container time {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .8rem;
+  width: 100%;
+  color: #fff;
+}
+.news-img-container time span.year {
+  display: block;
+  font-size: .9rem;
+}
+.news-img-container time span.month-day {
+  display: block;
+  font-size: 1.3rem;
+  margin-top: .3rem;
+}
+.news-list li .recommend-news-text {
+  position: absolute;
+  top: .85rem;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  padding-left: 145px;
+}
+.recommend-news-text h3 {
+  position: relative;
+  height: 1.6rem;
+  padding-top: .2rem;
+  padding-bottom: .4rem;
+  line-height: 1rem;
+  font-size: .8rem;
+  font-weight: normal;
+  color: #4e4e4e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recommend-news-text h3:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  height: 1px;
+  width: 1.5rem;
+  background-color: #4e4e4e;
+}
+.recommend-news-text p {
+  height: 3.6rem;
+  margin-top: .5rem;
+  line-height: 1.5;
+  color: #a8a8a8;
+  font-size: .6rem;
+  overflow: hidden;
+}
+.recommend-news-text a.look-through-details {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.3rem;
+  margin-top: .4rem;
+  text-align: center;
+  font-size: .9rem;
+  font-weight: bolder;
+  color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  border-radius: 50%;
+}
+/* 分页 */
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+.pagination > li { display: inline; }
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+/*===新闻详情===*/
+/* 文章正文 */
+.news-details-main article { margin-top: 1rem; }
+.news-details-main article h2 {
+  margin-bottom: .3rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.2;
+}
+.news-details-main article .article-details {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  margin-top: .5rem;
+}
+.news-details-main article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.2rem auto;
+}
+.news-details-main article .article-details p {
+  margin-top: .8em;
+  margin-bottom: .8em;
+  line-height: 1.7;
+  text-indent: 2em;
+  text-align: justify;
+  word-wrap: break-word;
+}
+/* 上一篇，下一篇 */
+.page { margin-top: 1rem; }
+.page .page-pre,
+.page .page-next {
+  width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page .page-next { text-align: right; }
+
+/*===体验店===*/
+.store-summary { padding-top: 1rem; }
+.store-summary p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  line-height: 1.8;
+  text-align: justify;
+  word-wrap: break-word;
+  letter-spacing: .1em;
+  text-indent: 2.2em; /* 多给 0.2em 能消除由 letter-spacing 引起的第一行不能留空两个汉字的情况 */
+
+}
+.store-info-list { margin-top: 2rem; }
+.store-info-list li {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f3f3;
+}
+.store-info-list li .store-info-text {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  padding-right: 150px;
+}
+.store-info-text > div { color: #4e4e4e; }
+.store-info-text .retail-stroe {
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.store-info-text .tagline {
+  font-size: .8rem;
+  line-height: 1.3;
+}
+.store-info-text .s-v {
+  position: relative;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.store-info-text .s-v:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background-color: #4e4e4e;
+}
+.store-info-text .address {
+  font-size: .6rem;
+  margin-top: .5rem;
+  line-height: 1.3;
+}
+.store-info-text .phone {
+  margin-top: .5rem;
+  font-size: .6rem;
+  line-height: 1.3;
+}
+.store-info-text .contact-person {
+  margin-top: .5rem;
+  font-size: .6rem;
+  line-height: 1.3;
+}
+.store-info-text .look-through-map { margin-top: .5rem; }
+.store-info-text .look-through-map a {
+  display: inline-block;
+  padding: .1rem 1.6rem .1rem .6rem;
+  color: #4e4e4e;
+  border: 1px solid #4e4e4e;
+  border-radius: .2rem;
+  background: url("../images/more-bottom.png") no-repeat 3.8rem center;
+}
+.store-info-list li figure.store-info-img {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 140px;
+  height: 220px;
+}
+
+/*===体验店地图===*/
+.store-map-main {
+  width: 100%;
+  overflow: hidden;
+}
+.store-map-main figure {
+  width: 100%;
+  height: 100%;
+}
+.store-map-main figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.store-map-footer.footer { margin-top: 0; }
+
+/*===无人机===*/
+.uav-summary {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.uav-summary p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  line-height: 1.8;
+  text-align: justify;
+  word-wrap: break-word;
+  letter-spacing: .1em;
+  text-indent: 2.2em; /* 多给 0.2em 能消除由 letter-spacing 引起的第一行不能留空两个汉字的情况 */
+}
+.uav-service-type li {
+  float: left;  
+  width: 50%;
+}
+.uav-service-type li a {
+  display: block;
+  width: 100%;
+  color: #0068b7;
+  padding: .4rem 1.4rem .4rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.uav-service-type li:nth-of-type(2n) a { padding-right: 0; }
+#uavCase {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0;
+}
+#uavCase li {
+  display: inline-block;
+  width: 50%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: .8rem;
+  color: #0068b7;
+  background-color: #fff;
+  border: 1px solid #0068b7;
+  text-align: center;
+}
+#uavCase li:first-child {
+  border-top-left-radius: .3rem;
+  border-bottom-left-radius: .3rem;
+}
+#uavCase li:last-child {
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+}
+#uavCase li.active {
+  color: #fff;
+  background-color: #0068b7;
+}
+/* 无人机和案例介绍 */
+.intro { margin-top: .8rem; }
+#uavIntro { width: 100%; }
+.uav-list { width: 100%; }
+.uav-list li {
+  position: relative;
+  float: left;
+  width: 49%;
+  margin-top: .7rem;
+  overflow: hidden;
+}
+.uav-list li:not(:nth-of-type(2n)) { margin-right: 2%; }
+.uav-list li figure.uav-img {
+  width: 100%;
+  height: 100%;
+}
+.uav-list li figure.uav-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.uav-list li .uav-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: .5rem;
+  background-color: rgba(0, 104, 183, .8);
+  color: #fff;
+}
+.uav-list li .uav-info p {
+  font-size: .6rem;
+  line-height: .9rem;
+  max-height: 1.8rem;
+  overflow: hidden;
+}
+/* 案例介绍 */
+#caseIntro {
+  width: 100%;
+  display: none;
+}
+.case-list { width: 100%; }
+.case-list li {
+  position: relative;
+  float: left;
+  width: 49%;
+  margin-top: .7rem;
+}
+.case-list li:not(:nth-of-type(2n)) { margin-right: 2%; }
+.case-list li figure.case-img {
+  width: 100%;
+  height: 100%;
+}
+.case-list li figure.case-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.case-list li .case-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: .5rem;
+  background-color: rgba(0, 104, 183, .8);
+  color: #fff;
+}
+.case-list li .case-info p {
+  font-size: .6rem;
+  line-height: .9rem;
+  max-height: 1.8rem;
+  overflow: hidden;
+}
+
+/*===无人机详情===*/
+.uav-details-main { padding-top: 2rem; }
+.uav-details-main article h2 {
+  margin-top: .9rem;
+  margin-bottom: .9rem;
+  font-size: .9rem;
+  line-height: 1.2;
+}
+.uav-details-main article p {
+  margin-top: .8em;
+  margin-bottom: .8em;
+  line-height: 1.7;
+  text-indent: 2em;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+/*===传媒===*/
+.media-info { margin-top: 1.5rem; } 
+.media-info section { margin-top: .7rem; }
+.media-info h3 {
+  font-size: .8rem;
+  color: #333;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.media-info p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  line-height: 1.8;
+  text-align: justify;
+  word-wrap: break-word;
+  letter-spacing: .1em;
+  text-indent: 2.2em; /* 多给 0.2em 能消除由 letter-spacing 引起的第一行不能留空两个汉字的情况 */
+}
+.service-content { margin-top: 1.5rem; }
+.service-content h2 {
+  position: relative;
+  font-size: .9rem;
+  color: #333;
+  height: 1.6rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+}
+.service-content h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #333;
+}
+.media-service-list { padding-top: .5rem; }
+.media-service-list li {
+  float: left;
+  width: 49%;
+  margin-top: .8rem;
+  margin-right: 2%;
+}
+.media-service-list li a {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.media-service-list li a i {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(129, 129, 129, .4);
+  color: #fff;
+  font-size: 2rem;
+}
+.media-service-list li:nth-of-type(2n) { margin-right: 0; }
+.media-service-list li figure { width: 100%; }
+.media-service-list li figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.media-service-list li em {
+  display: block;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  font-size: .6rem;
+  /* padding-right: .3rem;
+  padding-left: .3rem; */
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: normal;
+}

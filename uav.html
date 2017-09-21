@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+        <title>无人机_斯凯威</title>
+        <meta name="keywords" content="斯凯威无人机可用于消防、电力、交通、武警、公安等部门，为客户提供工程架线、电力巡检、监控、实时传输、侦查、追踪、人员搜救、物资投放、火点侦查等服务。">
+        <meta name="description" content="斯凯威无人机技术研发部专为相关部门定制可广泛用于消防、电力、交通、武警、公安等的无人机，并利用自主研发的无人机和高程地图、3维实物建模等技术为客户提供定制服务，如：工程架线、电力巡检、监控、实时传输、侦查、追踪、人员搜救、物资投放、火点侦查。">
+        <meta name="author" content="lixinjie">
+        <link rel="stylesheet" href="style/skyview-phone.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>无人机</h1>
+            <nav class="nav">
+                <div class="menu-wrap">                    
+                    <button id="menu" type="button">
+                        <i id="menuIcon" class="iconfont icon-menu"></i>
+                        <!-- <i id="closeIcon" class="iconfont icon-close"></i> -->
+                    </button>
+                </div>                
+                <ul id="navList">
+                    <!-- 对当前页面的链接添加 active 类名 -->
+                    <li><a href="#" title="首页">首页</a></li>
+                    <li><a href="#" title="新闻">新闻</a></li>
+                    <li><a href="#" title="传媒">传媒</a></li>
+                    <li><a href="#" title="体验店">体验店</a></li>
+                    <li><a href="#" title="无人机" class="active">无人机</a></li>
+                    <li><a href="#" title="联系我们">联系我们</a></li>
+                </ul>
+            </nav>    
+        </header>
+        <main class="main center-content uav-main">
+            <div class="uav-summary">
+                <p>斯凯威无人机技术研发部专为相关部门定制可广泛用于消防、电力、交通、武警、公安等的无人机，并利用自主研发的无人机和高程地图、3维实物建模等技术为客户提供定制服务，如：工程架线、电力巡检、监控、实时传输、侦查、追踪、人员搜救、物资投放、火点侦查。</p>
+            </div>
+            <!-- <ul class="uav-service-type clearfix">
+                <li><a href="#" title="无人机航测">无人机航测</a></li>
+                <li><a href="#" title="数字划线图">数字划线图</a></li>
+                <li><a href="#" title="数字高程模型">数字高程模型</a></li>
+                <li><a href="#" title="无人机航拍宣传片摄制服务">无人机航拍宣传片摄制服务</a></li>
+                <li><a href="#" title="无人机航拍照片">无人机航拍照片</a></li>
+                <li><a href="#" title="工程测量">工程测量</a></li>
+                <li><a href="#" title="电子沙盘">电子沙盘</a></li>
+                <li><a href="#" title="大型工程成果展示">大型工程成果展示</a></li>
+                <li><a href="#" title="景区虚拟旅游">景区虚拟旅游</a></li>
+            </ul> -->
+            <!-- 点击无人机时显示 id="uavIntro" 的内容，点击案例时显示 id="caseIntro" 的内容， -->
+            <ul id="uavCase">
+                <li title="无人机" id="uav" class="active">无人机</li>
+                <!-- <li title="案例" id="case">案例</li> -->
+            </ul>
+            <div class="intro">
+                <div id="uavIntro">
+                    <ul id="uavList" class="uav-list clearfix">
+                        <li>
+                            <figure class="uav-img"><img src="images/product.jpg" alt="无人机产品展示" class="thumb"></figure>
+                            <div class="uav-info">
+                                <p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="uav-img"><img src="images/product.jpg" alt="无人机产品展示" class="thumb"></figure>
+                            <div class="uav-info">
+                                <p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="uav-img"><img src="images/product.jpg" alt="无人机产品展示" class="thumb"></figure>
+                            <div class="uav-info">
+                                <p>简介简介简介简介简介简介简介简介</p>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="uav-img"><img src="images/product.jpg" alt="无人机产品展示" class="thumb"></figure>
+                            <div class="uav-info">
+                                <p>简介简介简介简介</p>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="uav-img"><img src="images/news-recommend.jpg" alt="无人机产品展示" class="thumb"></figure>
+                            <div class="uav-info">
+                                <p>简介简介</p>
+                            </div>
+                        </li>
+                        <li>
+                            <figure class="uav-img"><img src="images/news-recommend2.jpg" alt="无人机产品展示" class="thumb"></figure>
+                            <div class="uav-info" id="uavInfo">
+                                <p></p>
+                            </div>
+                        </li>
+                    </ul>                    
+                    <ul class="pagination">
+                        <!-- 当前页面时，给 li 添加 active 类 -->
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div id="caseIntro">
+                                        <ul id="caseList" class="case-list clearfix">
+                                            <li>
+                                                <figure class="case-img"><img src="images/media.jpg" alt="案例展示"></figure>
+                                                <div class="case-info">
+                                                    <p>案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure class="case-img"><img src="images/home-aboutus.jpg" alt="案例展示"></figure>
+                                                <div class="case-info">
+                                                    <p>案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure class="case-img"><img src="images/home-uav-mountain.jpg" alt="案例展示"></figure>
+                                                <div class="case-info">
+                                                    <p>案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure class="case-img"><img src="images/home-uav-focus.jpg" alt="案例展示"></figure>
+                                                <div class="case-info">
+                                                    <p>案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍，案例详情介绍</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure class="case-img"><img src="images/news-recommend.jpg" alt="案例展示"></figure>
+                                                <div class="case-info">
+                                                    <p>案例详情介绍，案例详情介绍，案例详情介绍</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <figure class="case-img"><img src="images/news-recommend2.jpg" alt="案例展示"></figure>
+                                                <div class="case-info" id="caseInfo">
+                                                    <p></p>
+                                                </div>
+                                            </li>
+                                        </ul>                    
+                                        <ul class="pagination">
+                                            当前页面时，给 li 添加 active 类
+                                            <li>
+                                              <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                              </a>
+                                            </li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li>
+                                              <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                              </a>
+                                            </li>
+                                        </ul>
+                                    </div> -->                    
+            </div>                
+        </main>
+        <footer class="footer">
+            <small>Copyrights &copy; 2015 All Rights Reserved by WorldLink & Company.</small>
+        </footer>
+        <script src="script/jquery-3.1.0.min.js"></script>
+        <script src="script/skyview-phone.js"></script>
+    </body>
+</html>
