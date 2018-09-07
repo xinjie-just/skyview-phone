@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>视频素材分享_斯凯威</title>
+        <meta name="keywords" content="斯凯威传媒，致力于宣传片拍摄、无人机航拍、VR全景拍摄等新媒体手段的内容制作。">
+        <meta name="description" content="斯凯威传媒，致力于宣传片拍摄、无人机航拍、VR全景拍摄等新媒体手段的内容制作。斯凯威一直坚持科技创新的理念，将自主研发的无人机结合特种拍摄手法，投入影视航拍，斯凯威参与了大量的电影、广告、记录片、宣传片等的拍摄。">
+        <meta name="author" content="lixinjie">
+        <link rel="stylesheet" href="style/skyview-phone.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>传媒</h1>
+            <nav class="nav">
+                <div class="menu-wrap">                    
+                    <button id="menu" type="button">
+                        <i id="menuIcon" class="iconfont icon-menu"></i>
+                    </button>
+                </div>                
+                <ul id="navList">
+                    <!-- 对当前页面的链接添加 active 类名 -->
+                    <li><a href="#" title="首页">首页</a></li>
+                    <li><a href="#" title="新闻">新闻</a></li>
+                    <li><a href="#" title="传媒">传媒</a></li>
+                    <li><a href="#" title="体验店">体验店</a></li>
+                    <li><a href="#" title="无人机">无人机</a></li>
+                    <li><a href="#" title="联系我们">联系我们</a></li>
+                    <li><a href="#" title="视频素材分享" class="active">视频素材分享</a></li>
+                </ul>
+            </nav>    
+        </header>
+        <main class="main center-content video-main">
+            <div class="video-classify">
+                <a href="#" title="推荐" class="active">推荐</a>
+                <a href="#" title="自然">自然</a>
+                <a href="#" title="城市">城市</a>
+                <a href="#" title="动物">动物</a>
+                <a href="#" title="人物">人物</a>
+                <a href="#" title="食物">食物</a>
+                <a href="#" title="水下">水下</a>
+            </div>
+            <div class="count-viewtype">
+                <div class="count">数量：<span>100</span>个</div>
+                <!-- 被激活按钮添加 active -->
+                <div class="viewtype" id="viewtype">
+                    <button type="button" class="list-button active"></button>
+                    <button type="button" class="view-button"></button>
+                </div>
+            </div>
+            <!--上面 .view-button 添加上 active 后，下面的 video-list 也要加上 view-->
+            <div class="video-list" id="videoList">
+                <a href="#" title="" class="video-item">
+                    <img src="images/video-img1.jpg" alt="">
+                    <time class="duration">00:18</time>
+                </a>
+                <a href="#" title="" class="video-item">
+                    <img src="images/video-img2.jpg" alt="">
+                    <time class="duration">00:08</time>
+                </a>
+                <a href="#" title="" class="video-item">
+                    <img src="images/video-img3.jpg" alt="">
+                    <time class="duration">00:28</time>
+                </a>
+                <a href="#" title="" class="video-item">
+                    <img src="images/video-img4.jpg" alt="">
+                    <time class="duration">00:28</time>
+                </a>
+            </div>
+        </main>
+        <footer class="footer">
+            <small>Copyrights &copy; 2015 All Rights Reserved by WorldLink & Company.</small>
+        </footer>
+        <script src="script/jquery-3.1.0.min.js"></script>
+        <script src="script/skyview-phone.js"></script>
+    </body>
+</html>

@@ -2243,3 +2243,153 @@ figure.logo > a > img {
   color: #666;
   border-color: #aeaeae;
 }
+
+/*===视频素材分享===*/
+.video-classify {
+  background-color: #fff;
+  box-shadow: inset 0 -1px 0 0 rgba(203, 203, 203, 0.5);
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 0;
+}
+.video-classify a {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-bottom: 2px solid transparent;
+  font-size: .7rem;
+  color: #666;
+}
+.video-classify a:not(:last-of-type) {
+  margin-right: .2rem;
+}
+.video-classify a.active {
+  border-color: #0068b7;
+}
+.count-viewtype {
+  height: 50px;
+  line-height: 50px;
+}
+.count-viewtype::before,
+.count-viewtype::after {
+  display: table;
+  content: "";
+}
+.count-viewtype::after {
+  clear: both;
+}
+.count-viewtype .count {
+  float: left;
+  font-size: 14px;
+  color: #666;
+}
+.count-viewtype .count span {
+  color: #333;
+  margin-right: 5px;
+}
+.count-viewtype .viewtype {
+  float: right;
+}
+.count-viewtype .viewtype button {
+  display: inline-block;
+  vertical-align: middle;
+}
+.count-viewtype .viewtype button:not(:last-of-type) {
+  margin-right: 8px;
+}
+.count-viewtype .viewtype .list-button {
+  color: #bababa;
+  width: 26px;
+  height: 20px;
+  box-sizing: border-box;
+  border-top: 4px solid; /*没有设置颜色值，将同文本颜色一样*/
+  border-bottom: 4px solid;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: currentColor; /*颜色关键字，将同文本颜色一致*/
+  background-clip: content-box; /*背景将绘制在内容方框内*/
+}
+.count-viewtype .viewtype .list-button.active {
+  color: #0068b7;
+}
+.count-viewtype .viewtype .view-button {
+  position: relative;
+  width: 26px;
+  height: 20px;
+  background-color: currentColor; /*颜色关键字，将同文本颜色一致*/
+}
+.count-viewtype .viewtype .view-button.active {
+  color: #0068b7;
+}
+.count-viewtype .viewtype .view-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+  background-color: #fff; /*颜色关键字，将同文本颜色一致*/
+}
+.count-viewtype .viewtype .view-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background-color: #fff; /*颜色关键字，将同文本颜色一致*/
+}
+.video-list {
+  margin-top: 10px;
+}
+/*.video-list.view::before,
+.video-list.view::after {
+  content: "";
+  display: table;
+}
+.video-list.view::after {
+  clear: both;
+}*/
+.video-list.view {
+  column-count: 2;
+  column-gap: 10px;
+}
+.video-list.view a {
+  position: relative;
+  break-inside: avoid;
+  box-sizing: border-box;
+}
+/*.video-list.view a:nth-of-type(2n + 1) {
+  margin-right: 2%;
+}*/
+.video-list a {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+}
+.video-list a img {
+  display: block;
+  width: 100%;
+}
+.video-list a span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+.video-list a time {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #fff;
+}

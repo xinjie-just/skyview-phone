@@ -30,11 +30,18 @@ $(document).ready(function() {
 	}
 
 	// 菜单	
-	$("#menu").click(function(){
+	$("#menu").click(function(e){
 		$("#navList").slideToggle();
+        $(document).on("click", function () {
+            $("#navList").slideUp();
+        });
+        e.stopPropagation();
 	});
+    $("#navList").on("click", function (e) {
+        e.stopPropagation();
+    });
 
-	// 传媒页面设置服务列表的宽和高
+    // 传媒页面设置服务列表的宽和高
 	$("#mediaServiceList li figure").outerHeight(parseFloat($("#mediaServiceList li figure").outerWidth() / 1.25));
 	$("#mediaServiceList li a i").outerHeight(parseFloat($("#mediaServiceList li figure").outerHeight()));
 	$("#mediaServiceList li a i").css("lineHeight", parseFloat($("#mediaServiceList li figure").height()) + "px");
@@ -49,5 +56,19 @@ $(document).ready(function() {
 	}
 	// 设定图片的高度
 	$("#uavList li").height($("#uavList li").width() * 3 / 4);
+
+	// 视频布局方式
+	$("#viewtype .list-button").click(function () {
+		$(this).addClass("active");
+		$(this).siblings("button").removeClass("active");
+		if ($("#videoList").hasClass("view")) {
+            $("#videoList").removeClass("view");
+		}
+    });
+    $("#viewtype .view-button").click(function () {
+        $(this).addClass("active");
+        $(this).siblings("button").removeClass("active");
+        $("#videoList").addClass("view");
+    });
 
 });
