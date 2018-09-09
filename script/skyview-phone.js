@@ -6,27 +6,38 @@ $(document).ready(function() {
 
 	// 给页面标题 .header h1 添加 letter-spacing 
 	var h1Len = $(".header h1").text().length;
-	if (h1Len == 2) {
-		$(".header h1").css({
-			letterSpacing: "0.7rem",
-			paddingLeft: "0.7rem"
-		});
-	}
-	if (h1Len == 3) {
-		$(".header h1").css({
-			letterSpacing: "0.4rem",
-			paddingLeft: "0.4rem"
-		});
-	}	
-	if (h1Len > 4) {
-		$(".header h1").css({
-			fontSize: "0.8rem",
-			paddingLeft: "2.5rem",
-			paddingRight: "2.5rem",
-			overflow: "hidden",
-			textOverflow: "ellipsis",
-			whiteSpace: "nowrap"
-		});
+	switch(h1Len) {
+		case 1: {
+            $(".header h1").css({
+                letterSpacing: 0,
+                paddingLeft: 0
+            });
+            break;
+		}
+		case 2: {
+            $(".header h1").css({
+                letterSpacing: "0.7rem",
+                paddingLeft: "0.7rem"
+            });
+            break;
+		}
+		case 3: {
+            $(".header h1").css({
+                letterSpacing: "0.4rem",
+                paddingLeft: "0.4rem"
+            });
+            break;
+		}
+		default: {
+            $(".header h1").css({
+                fontSize: "0.8rem",
+                paddingLeft: "2.5rem",
+                paddingRight: "2.5rem",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap"
+            });
+		}
 	}
 
 	// 菜单	
@@ -42,8 +53,6 @@ $(document).ready(function() {
     });
 
     // 传媒页面设置服务列表的宽和高
-	$("#mediaServiceList li figure").outerHeight(parseFloat($("#mediaServiceList li figure").outerWidth() / 1.25));
-	$("#mediaServiceList li a i").outerHeight(parseFloat($("#mediaServiceList li figure").outerHeight()));
 	$("#mediaServiceList li a i").css("lineHeight", parseFloat($("#mediaServiceList li figure").height()) + "px");
 
 	// 如果无人机列表图片没有文字说明，将背景去掉
@@ -58,17 +67,15 @@ $(document).ready(function() {
 	$("#uavList li").height($("#uavList li").width() * 3 / 4);
 
 	// 视频布局方式
-	$("#viewtype .list-button").click(function () {
-		$(this).addClass("active");
-		$(this).siblings("button").removeClass("active");
-		if ($("#videoList").hasClass("view")) {
-            $("#videoList").removeClass("view");
-		}
-    });
-    $("#viewtype .view-button").click(function () {
+    $("#viewtype button").click(function () {
         $(this).addClass("active");
         $(this).siblings("button").removeClass("active");
-        $("#videoList").addClass("view");
+        if ($(this).hasClass("list-button")){
+            if ($("#videoList").hasClass("view")) {
+                $("#videoList").removeClass("view");
+            }
+        } else {
+            $("#videoList").addClass("view");
+        }
     });
-
 });

@@ -37,6 +37,9 @@ html {
 
 /* 为 body 元素设置字体尺寸和类型 */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
   max-width: 544px;
   margin-right: auto;
@@ -356,6 +359,9 @@ figure.logo > a > img {
 .icon-close:before { content: "\e602"; }
 .icon-menu:before { content: "\e601"; }
 
+main {
+  flex: 1;
+}
 /*===首页===*/
 /* 头部 */
 .header {
@@ -2271,6 +2277,7 @@ figure.logo > a > img {
 }
 .video-classify a.active {
   border-color: #0068b7;
+  color: #0068b7;
 }
 .count-viewtype {
   height: 50px;
@@ -2299,65 +2306,51 @@ figure.logo > a > img {
 .count-viewtype .viewtype button {
   display: inline-block;
   vertical-align: middle;
+  color: #bababa;
+  width: 26px;
+  height: 20px;
+  box-sizing: border-box;
+  background-color: currentColor; /*颜色关键字，将同文本颜色一致*/
+}
+.count-viewtype .viewtype button.active {
+  color: #0068b7;
 }
 .count-viewtype .viewtype button:not(:last-of-type) {
   margin-right: 8px;
 }
 .count-viewtype .viewtype .list-button {
-  color: #bababa;
-  width: 26px;
-  height: 20px;
-  box-sizing: border-box;
   border-top: 4px solid; /*没有设置颜色值，将同文本颜色一样*/
   border-bottom: 4px solid;
   padding-top: 4px;
   padding-bottom: 4px;
-  background-color: currentColor; /*颜色关键字，将同文本颜色一致*/
   background-clip: content-box; /*背景将绘制在内容方框内*/
-}
-.count-viewtype .viewtype .list-button.active {
-  color: #0068b7;
 }
 .count-viewtype .viewtype .view-button {
   position: relative;
-  width: 26px;
-  height: 20px;
-  background-color: currentColor; /*颜色关键字，将同文本颜色一致*/
 }
-.count-viewtype .viewtype .view-button.active {
-  color: #0068b7;
-}
-.count-viewtype .viewtype .view-button::before {
+.count-viewtype .viewtype .view-button::before,
+.count-viewtype .viewtype .view-button::after {
   content: "";
   position: absolute;
+  background-color: #fff;
+}
+.count-viewtype .viewtype .view-button::before {
   top: 50%;
   left: 0;
   right: 0;
   height: 1px;
   transform: translateY(-50%);
-  background-color: #fff; /*颜色关键字，将同文本颜色一致*/
 }
 .count-viewtype .viewtype .view-button::after {
-  content: "";
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 1px;
   transform: translateX(-50%);
-  background-color: #fff; /*颜色关键字，将同文本颜色一致*/
 }
 .video-list {
   margin-top: 10px;
 }
-/*.video-list.view::before,
-.video-list.view::after {
-  content: "";
-  display: table;
-}
-.video-list.view::after {
-  clear: both;
-}*/
 .video-list.view {
   column-count: 2;
   column-gap: 10px;
@@ -2367,9 +2360,6 @@ figure.logo > a > img {
   break-inside: avoid;
   box-sizing: border-box;
 }
-/*.video-list.view a:nth-of-type(2n + 1) {
-  margin-right: 2%;
-}*/
 .video-list a {
   position: relative;
   display: block;
@@ -2392,4 +2382,51 @@ figure.logo > a > img {
   right: 10px;
   font-size: 14px;
   color: #fff;
+}
+/*===视频素材分享===*/
+.skyview-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.video-details-info {
+  width: 96%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.video-details-info .video-heading {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: .8rem;
+  text-align: center;
+  line-height: 1.4;
+}
+.video-details-info .upload-time {
+  display: block;
+  font-size: 12px;
+  margin-bottom: .6rem;
+}
+.video-details-info .duration {
+  font-size: 12px;
+  margin-bottom: .6rem;
+}
+.video-details-info .keyword {
+  font-size: 12px;
+  margin-right: -.5em;
+  margin-left: -.5em;
+  color: #000;
+}
+.video-details-info .keyword dt {
+  display: block;
+  font-size: inherit;
+  font-weight: 500;
+  margin: 0 .5em .6rem;
+}
+.video-details-info .keyword dd {
+  display: inline-block;
+  padding: .2em .5em;
+  margin: 0 .5em 10px;
+  border: 1px solid;
 }
