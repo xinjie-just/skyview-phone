@@ -74,5 +74,63 @@
         </footer>
         <script src="script/jquery-3.1.0.min.js"></script>
         <script src="script/skyview-phone.js"></script>
+        <script>
+            /*没有数据时*/
+            function noData() {
+                var aLen = $("#videoList").find("a").length;
+                if (aLen === 0){
+                    /*这里如果不插入图片，插入文本也可，但是类名不要变*/
+                    $("#videoList").append("<img src='images/nodata.png' class='no-data' alt='无数据'>")
+                }
+            }
+            //显示加载动画
+            function showLoading() {
+                $("#videoList").append('<div class="loading">加载中</div>');
+            }
+            //隐藏加载动画
+            function hideLoading() {
+                $("#videoList").find("div.loading").remove();
+            }
+            $(function(){
+                noData();
+                /*下拉刷新*/
+                var pageNo = 1;
+                var pageSize = 10;
+                function loadData() {
+                    showLoading();
+                    $.ajax({
+                        url: "这里填入要访问的地址pageNo="+pageNo+"&pageSize="+pageSize,
+                        dataType: "JSON",
+                        success: function(data){
+                            hideLoading();
+                            if(data.length === 0) {//下拉后没有数据时
+                                $("#videoList").append("<p class='no-more-data'>亲，已无更多内容哦~</p>");
+                            }
+                            else{
+                                $.each(data,function(index, videos){
+                                    var html = "<a href=" + videos.link + " title=" + videos.title + " class='video-item'>" +
+                                                    "<img src=" + videos.imgSrc + " alt=" + videos.title + ">" +
+                                                    "<time class='duration'>" + videos.duration + "</time>" +
+                                                "</a>";
+                                    $("#videoList").append(html);
+                                });
+                                pageNo += 1;
+                            }
+                        },error: function() {
+                            hideLoading();
+                            alert("加载失败");
+                        }
+                    });
+                }
+                $(window).scroll(function() {
+                    var scrollTop = $(this).scrollTop();
+                    var scrollHeight = $(document).height();
+                    var windowHeight = $(this).height();
+                    if (scrollTop + windowHeight === scrollHeight) {
+                        loadData();
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

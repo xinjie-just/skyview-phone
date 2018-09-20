@@ -2351,23 +2351,57 @@ main {
 .video-list {
   margin-top: 10px;
 }
-.video-list.view {
-  column-count: 2;
-  column-gap: 10px;
+.video-list.view::before,
+.video-list.view::after {
+  content: "";
+  display: table;
+}
+.video-list.view::after {
+  clear: both;
 }
 .video-list.view a {
+  display: block;
   position: relative;
-  break-inside: avoid;
-  box-sizing: border-box;
+  float: left;
+  width: 49%;
+}
+@media (min-width: 320px) and (max-width: 369px) {
+  .video-list.view a {
+    height: 100px;
+  }
+}
+@media (min-width: 370px) and (max-width: 419px) {
+  .video-list.view a {
+    height: 116px;
+  }
+}
+@media (min-width: 420px) and (max-width: 469px) {
+  .video-list.view a {
+    height: 132px;
+  }
+}
+@media (min-width: 470px) and (max-width: 519px) {
+  .video-list.view a {
+    height: 148px;
+  }
+}
+@media (min-width: 520px) {
+  .video-list.view a {
+    height: 164px;
+  }
+}
+.video-list.view a:nth-of-type(2n + 1) {
+  margin-right: 2%;
 }
 .video-list a {
   position: relative;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .video-list a img {
   display: block;
   width: 100%;
+  height: 100%;
 }
 .video-list a span {
   position: absolute;
@@ -2382,6 +2416,33 @@ main {
   right: 10px;
   font-size: 14px;
   color: #fff;
+}
+.video-list .no-data {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+.video-list .no-more-data {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.video-list  .loading {
+  text-align: center;
+  text-indent: 35px;
+  padding: 20px;
+  background: url("../images/loading.gif") no-repeat;
+  background-size: 30px 30px;
+  background-position: calc(50% - 35px) center;
+  color: #333;
+  font-size: 16px;
 }
 /*===视频素材分享详情===*/
 .skyview-video {
@@ -2399,37 +2460,55 @@ main {
 .video-details-info .video-heading {
   font-size: 14px;
   font-weight: 500;
+  margin-top: .8rem;
   margin-bottom: .8rem;
   text-align: center;
   line-height: 1.4;
 }
 .video-details-info > div {
+  margin-top: .6rem;
   margin-bottom: .6rem;
 }
 .video-details-info .upload-time {
   display: block;
   font-size: 12px;
+  margin-top: .6rem;
   margin-bottom: .6rem;
 }
 .video-details-info .duration {
   font-size: 12px;
+  margin-top: .6rem;
   margin-bottom: .6rem;
 }
 .video-details-info .keyword {
-  font-size: 12px;
-  margin-right: -.5em;
-  margin-left: -.5em;
+  font-size: 0;
   color: #000;
 }
 .video-details-info .keyword dt {
+  font-size: 12px;
   display: block;
-  font-size: inherit;
   font-weight: 500;
-  margin: 0 .5em .6rem;
+  margin-top: .6rem;
+  margin-bottom: .6rem;
 }
 .video-details-info .keyword dd {
+  font-size: 12px;
   display: inline-block;
   padding: .2em .5em;
-  margin: 0 .5em 10px;
+  margin: 4px .8em 4px 0;
   border: 1px solid;
+}
+.video-details-info .desc {
+  font-size: 12px;
+  letter-spacing: .1em;
+  word-spacing: .1em;
+  line-height: 1.8em;
+  margin-top: 1em;
+  word-wrap: break-word;
+}
+.video-details-info .desc p {
+  text-indent: 2.2em;
+}
+.video-details-info .desc p:not(:last-of-type) {
+  margin-bottom: .9em;
 }
